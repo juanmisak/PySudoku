@@ -1,4 +1,4 @@
-from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSignal,QTimer,QString
 from PyQt4.QtGui import QMainWindow
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
@@ -17,9 +17,33 @@ class MainWindow(QMainWindow):
 		self.ui.setupUi(self)
 
 		self.initBoard()
+		self.initTimer()
 		# TODO get difficulty from user input
 		self.newGame(2)
-
+	def initTimer(self):
+		self.timer = QTimer()
+		self.timer.setInterval(1000)
+		self.timer.start()
+		self.h = 0
+		self.m = 0
+		self.s = 0		
+		self.timer.timeout.connect(self.timerTimeout)
+		
+	def timerTimeout(self):
+		self.s = self.s + 1
+		if self.s > 59:
+			self.s = 0
+			self.m=self.m + 1
+		elif self.m > 59:
+			self.m = 0
+			self.h= self.h + 1
+		elif self.h > 23:
+			self.h = 0
+		# Write time in lcd
+		self.ui.pushButton_2.setText(QString ("%1:%2:%3")
+                                    .arg (self.h)
+                                    .arg (self.m)
+                                    .arg (self.s) )
 	def initBoard(self):
 		self.board = []
 

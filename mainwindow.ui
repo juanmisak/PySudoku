@@ -429,7 +429,7 @@
    <string>QtSudoku v1.0</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Resources.qrc">
+   <iconset>
     <normaloff>:/images/qt_sudoku.ico</normaloff>:/images/qt_sudoku.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -456,7 +456,7 @@
      <rect>
       <x>10</x>
       <y>540</y>
-      <width>541</width>
+      <width>608</width>
       <height>62</height>
      </rect>
     </property>
@@ -467,7 +467,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-1.ico</normaloff>:/images/Numbers-1.ico</iconset>
        </property>
        <property name="iconSize">
@@ -499,7 +499,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-2.ico</normaloff>:/images/Numbers-2.ico</iconset>
        </property>
        <property name="iconSize">
@@ -519,7 +519,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-3.ico</normaloff>:/images/Numbers-3.ico</iconset>
        </property>
        <property name="iconSize">
@@ -539,7 +539,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-4.ico</normaloff>:/images/Numbers-4.ico</iconset>
        </property>
        <property name="iconSize">
@@ -559,7 +559,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-5.ico</normaloff>:/images/Numbers-5.ico</iconset>
        </property>
        <property name="iconSize">
@@ -579,7 +579,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-6.ico</normaloff>:/images/Numbers-6.ico</iconset>
        </property>
        <property name="iconSize">
@@ -599,7 +599,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-7.ico</normaloff>:/images/Numbers-7.ico</iconset>
        </property>
        <property name="iconSize">
@@ -619,7 +619,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-8.ico</normaloff>:/images/Numbers-8.ico</iconset>
        </property>
        <property name="iconSize">
@@ -639,7 +639,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Numbers-9.ico</normaloff>:/images/Numbers-9.ico</iconset>
        </property>
        <property name="iconSize">
@@ -669,11 +669,14 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="toolTip">
+     <string>Tiempo</string>
+    </property>
     <property name="text">
-     <string>Time :</string>
+     <string/>
     </property>
     <property name="icon">
-     <iconset resource="Resources.qrc">
+     <iconset>
       <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Maps-and-Geolocation-Compass.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Maps-and-Geolocation-Compass.ico</iconset>
     </property>
     <property name="iconSize">
@@ -700,11 +703,14 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="toolTip">
+     <string>Puntos</string>
+    </property>
     <property name="text">
-     <string>Puntos :</string>
+     <string/>
     </property>
     <property name="icon">
-     <iconset resource="Resources.qrc">
+     <iconset>
       <normaloff>:/images/Visualpharm-Icons8-Metro-Style-City-Gps-device.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-City-Gps-device.ico</iconset>
     </property>
     <property name="iconSize">
@@ -717,16 +723,6 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="cronometroLcd">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>10</y>
-      <width>64</width>
-      <height>23</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -734,7 +730,7 @@
      <x>0</x>
      <y>0</y>
      <width>559</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSudoku">

@@ -50,7 +50,7 @@ class Sudoku(QObject):
 
 		# Empty cells
 		while empty > 0:
-			i = random.randint(0, 9*9)
+			i = random.randint(0, 9*9 - 1)
 
 			if self.board[i] != 0:
 				self.board[i] = 0

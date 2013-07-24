@@ -429,7 +429,7 @@
    <string>QSudoku</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Resources.qrc">
+   <iconset>
     <normaloff>:/images/qt_sudoku.ico</normaloff>:/images/qt_sudoku.ico</iconset>
   </property>
   <widget class="QLabel" name="label">
@@ -458,7 +458,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</iconset>
    </property>
    <property name="iconSize">
@@ -471,7 +471,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnEstadistica">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -487,7 +487,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Charts-Combo.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Charts-Combo.ico</iconset>
    </property>
    <property name="iconSize">
@@ -539,6 +539,9 @@
        <property name="text">
         <string>Fácil</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -567,7 +570,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="txtNombre">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -599,7 +602,7 @@
     <string>QSudoku</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="btnJugar">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -615,7 +618,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</iconset>
    </property>
    <property name="iconSize">
@@ -628,7 +631,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="btnDesarrolladores">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -647,7 +650,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</iconset>
    </property>
    <property name="iconSize">

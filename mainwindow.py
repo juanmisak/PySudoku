@@ -17,9 +17,7 @@ class MainWindow(QMainWindow):
 		self.ui.setupUi(self)
 
 		self.initBoard()
-		self.initTimer()
-		# TODO get difficulty from user input
-		self.newGame(2)
+		
 	def initTimer(self):
 		self.timer = QTimer()
 		self.timer.setInterval(1000)
@@ -69,6 +67,8 @@ class MainWindow(QMainWindow):
 
 		# Update the model when the view is changed
 		self.cellValueChanged.connect(self.sudoku.setCellValue)
+
+		self.initTimer()
 
 	def setCellValue(self, index, value):
 		self.board[index].setValue(value)

@@ -66,4 +66,5 @@ class Keyboard(QWidget):
 			self.numberSelected.connect(cell.setValue)
 			self.modeChanged.connect(cell.setMode)
 			self.attachedCell = cell
+			self.move(cell.pos().x() + 25, cell.pos().y() + 90)
 			self.show()

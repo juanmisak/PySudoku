@@ -1,8 +1,13 @@
 import random
+from PyQt4.QtCore import QObject, pyqtSignal
 
-class Sudoku:
+class Sudoku(QObject):
+
+	cellValueChanged = pyqtSignal(int, int)
 
 	def __init__(self):
+		QObject.__init__(self)
+
 		self.board = [
 			5,3,4,6,7,8,9,1,2,
 			6,7,2,1,9,5,3,4,8,
@@ -21,6 +26,14 @@ class Sudoku:
 			if ( i % 9 == 0 ): s += "\n"
 			s += str( self.board[i] ) + ' '
 		return s
+
+	def setCellValue(self, index, value):
+		if self.board[index] != value:
+			self.board[index] = value
+			self.cellValueChanged.emit(index, value)
+
+	def getCellValue(self, index):
+		return self.board[index]
 
 	def shuffle(self, empty):
 		# Swap block rows and columns
@@ -42,6 +55,11 @@ class Sudoku:
 			if self.board[i] != 0:
 				self.board[i] = 0
 				empty -= 1
+
+		# Emit signal for filled cells
+		for i in range( len(self.board) ):
+			if self.board[i] != 0:
+				self.cellValueChanged.emit(i, self.board[i])
 
 	def __swapBigRow(self, i, j):
 		for y in range(3):

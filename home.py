@@ -14,7 +14,7 @@ class Home(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_Home()
-        self.ui.setupUi(self)    
+        self.ui.setupUi(self)       
         self.ui.btnJugar.clicked.connect(self.onBtnJugarClicked)
         self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
     
@@ -47,9 +47,8 @@ if __name__ == '__main__':
     import sys
     from PyQt4.QtGui import QApplication
     
-    app = QApplication(sys.argv)
-
-    h = Home()
+    app = QApplication(sys.argv) 
+    h = Home()   
     h.show()
 
     sys.exit(app.exec_())

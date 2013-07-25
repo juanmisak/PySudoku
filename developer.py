@@ -1,9 +1,23 @@
-# -*- coding: utf-8 -*-
+'''
+Created on 25/07/2013
 
-# Form implementation generated from reading ui file '/media/juan/D480EFE580EFCBD4/Users/Juan/Documents/GitHub/Sudoku-cpp/developer.ui'
-#
-# Created: Fri Jul 19 18:43:30 2013
-#      by: PyQt4 UI code generator 4.10
-#
-# WARNING! All changes made in this file will be lost!
+@author: Esteban
+'''
 
+from PyQt4.QtGui import QMainWindow
+from ui_developer import Ui_Developer
+#from home import Home
+
+class Developer(QMainWindow):
+
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_Developer()
+        self.ui.setupUi(self)    
+    #    self.ui.btnInicio.clicked.connect(self.onBtnInicioClicked)
+    
+    #def onBtnInicioClicked(self):
+    #    self.h = Home()
+    #    self.h.setVisible(True)
+    #    self.close()
+        

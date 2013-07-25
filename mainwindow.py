@@ -2,6 +2,7 @@ from PyQt4.QtCore import pyqtSignal,QTimer,QString
 from PyQt4.QtGui import QMainWindow
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
+#from home import Home
 from keyboard import Keyboard
 from sudoku import Sudoku
 
@@ -15,8 +16,9 @@ class MainWindow(QMainWindow):
 
 		self.ui = Ui_MainWindow()
 		self.ui.setupUi(self)
-
 		self.initBoard()
+		self.ui.actionSALIR.triggered.connect(self.onActionSalirTriggered)
+		#self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
 		
 	def initTimer(self):
 		self.timer = QTimer()
@@ -38,10 +40,11 @@ class MainWindow(QMainWindow):
 		elif self.h > 23:
 			self.h = 0
 		# Write time in lcd
-		self.ui.pushButton_2.setText(QString ("%1:%2:%3")
+		self.ui.btnTiempo.setText(QString ("%1:%2:%3")
                                     .arg (self.h)
                                     .arg (self.m)
                                     .arg (self.s) )
+	
 	def initBoard(self):
 		self.board = []
 
@@ -58,17 +61,16 @@ class MainWindow(QMainWindow):
 			# Change cell value when user change cell value
 			c.valueChanged.connect(self.setCellValueFromView)
 
-	def newGame(self, difficulty):
+	def newGame(self, difficulty,name):
 		# Generate new sudoku board
 		self.sudoku = Sudoku()
 		self.sudoku.cellValueChanged.connect(self.setCellValue)
 		self.sudoku.shuffle(difficulty*9 + 3*9)
-		self.sudoku.cellValueChanged.disconnect(self.setCellValue)
-
+		self.sudoku.cellValueChanged.disconnect(self.setCellValue)		
 		# Update the model when the view is changed
 		self.cellValueChanged.connect(self.sudoku.setCellValue)
-
 		self.initTimer()
+		self.ui.btnJugador.setText(name)
 
 	def setCellValue(self, index, value):
 		self.board[index].setValue(value)
@@ -78,14 +80,14 @@ class MainWindow(QMainWindow):
 		c = self.sender()
 
 		self.cellValueChanged.emit( self.board.index(c), value )
-
-if __name__ == '__main__':
-	import sys
-	from PyQt4.QtGui import QApplication
 	
-	app = QApplication(sys.argv)
+	def onActionSalirTriggered(self):
+		self.close()
+	
+	#def onActionAtrasTriggered(self):
+	#	self.home = Home()
+	#	self.home.setVisible(True)
+	#	self.close()
+				
+	
 
-	w = MainWindow()
-	w.show()
-
-	sys.exit(app.exec_())

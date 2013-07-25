@@ -4,18 +4,19 @@ Created on 24/07/2013
 @author: Esteban
 '''
 
-from PyQt4.QtGui import QMainWindow,QMessageBox
+from PyQt4.QtGui import QMainWindow
 from ui_home import Ui_Home
-#from developer import Developer
+from developer import Developer
 from mainwindow import MainWindow
+
 class Home(QMainWindow):
 
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_Home()
-        self.ui.setupUi(self)
-       # self.timer.timeout.connect(self.timerTimeout)
+        self.ui.setupUi(self)    
         self.ui.btnJugar.clicked.connect(self.onBtnJugarClicked)
+        self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
     
     def onBtnJugarClicked(self):
         # Facil 36 vacias
@@ -31,12 +32,16 @@ class Home(QMainWindow):
             difficulty = 1           
         self.setVisible(False)
         self.w = MainWindow()
-        self.w.show()
-        self.w.newGame(difficulty)
+        self.w.show()           
+        self.w.newGame(difficulty,self.ui.txtNombre.text())
             
-    #def onBtnDesarrolladoresClicked(self):
-       # self.ui.btnDesarrolladores
-            
+        # def onBtnDesarrolladoresClicked(self):
+        # self.ui.btnDesarrolladores 
+    def onBtnDesarrolladoresClicked(self): 
+        self.d = Developer()
+        self.d.setVisible(True)
+        self.close()
+              
             
 if __name__ == '__main__':
     import sys

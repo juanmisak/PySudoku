@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>qt_sudoku.ico</file>
+        <file>Numbers-9.ico</file>
+        <file>Numbers-8.ico</file>
+        <file>Numbers-7.ico</file>
+        <file>Numbers-6.ico</file>
+        <file>Numbers-5.ico</file>
+        <file>Numbers-4.ico</file>
+        <file>Numbers-3.ico</file>
+        <file>Numbers-2.ico</file>
+        <file>Numbers-1.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Maps-and-Geolocation-Compass.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-City-Gps-device.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Charts-Combo.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Chess-Knight.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Chess-Pawn.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Chess-Queen.ico</file>
+        <file>Mysitemyway-Blue-Jeans-Social-Media-Delicious-square.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Very-Basic-Home.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Logos-Github.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Management-Online-support.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</file>
+        <file>Visualpharm-Icons8-Metro-Style-USB-Usb-connected.ico</file>
+        <file>Deleket-Social-Networking-Facebook.ico</file>
+        <file>Iconarchive-Red-Orb-Alphabet-Letter-S.ico</file>
+        <file>Visualpharm_atras.ico</file>
+        <file>Visualpharm_cargarPartida.ico</file>
+        <file>Visualpharm_guardarPartida.ico</file>
+        <file>Visualpharm_jugadasIncorrectas.ico</file>
+        <file>Visualpharm_jugadasInvalidas.ico</file>
+        <file>Visualpharm_proporcionarAyuda.ico</file>
+        <file>Visualpharm_salir.ico</file>
+    </qresource>
+</RCC>

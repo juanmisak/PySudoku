@@ -33,5 +33,6 @@
         <file>Visualpharm_jugadasInvalidas.ico</file>
         <file>Visualpharm_proporcionarAyuda.ico</file>
         <file>Visualpharm_salir.ico</file>
+        <file>Iconarchive_Termine.ico</file>
     </qresource>
 </RCC>

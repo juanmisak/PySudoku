@@ -566,6 +566,7 @@
    <addaction name="actionINCORRECTAS"/>
    <addaction name="actionAYUDA"/>
    <addaction name="separator"/>
+   <addaction name="endGameButton"/>
    <addaction name="actionATRAS"/>
    <addaction name="actionSALIR"/>
   </widget>
@@ -657,6 +658,18 @@
    </property>
    <property name="toolTip">
     <string>SALIR</string>
+   </property>
+  </action>
+  <action name="endGameButton">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/Iconarchive_Termine.ico</normaloff>:/images/Iconarchive_Termine.ico</iconset>
+   </property>
+   <property name="text">
+    <string>TERMINE</string>
+   </property>
+   <property name="toolTip">
+    <string>¡TERMINE!</string>
    </property>
   </action>
  </widget>

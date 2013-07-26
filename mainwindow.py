@@ -1,5 +1,5 @@
 from PyQt4.QtCore import pyqtSignal,QTimer,QString
-from PyQt4.QtGui import QMainWindow
+from PyQt4.QtGui import QMainWindow, QMessageBox
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
 #from home import Home
@@ -28,6 +28,9 @@ class MainWindow(QMainWindow):
 		self.m = 0
 		self.s = 0		
 		self.timer.timeout.connect(self.timerTimeout)
+
+	def stopTimer(self):
+		self.timer.stop()
 		
 	def timerTimeout(self):
 		self.s = self.s + 1
@@ -72,6 +75,9 @@ class MainWindow(QMainWindow):
 		self.initTimer()
 		self.ui.btnJugador.setText(name)
 
+	def endGame(self):
+		self.stopTimer()
+
 	def setCellValue(self, index, value):
 		self.board[index].setValue(value)
 		# TODO change color to indicate that it's precalculated
@@ -80,14 +86,22 @@ class MainWindow(QMainWindow):
 		c = self.sender()
 
 		self.cellValueChanged.emit( self.board.index(c), value )
-	
+
 	def onActionSalirTriggered(self):
 		self.close()
-	
+
 	#def onActionAtrasTriggered(self):
 	#	self.home = Home()
 	#	self.home.setVisible(True)
 	#	self.close()
-				
-	
 
+	def on_endGameButton_triggered(self):
+		msj = QMessageBox()
+
+		valid = self.sudoku.validate()
+
+		msj.setText( "Valido" if valid else "NO valido" )
+		msj.exec_()
+
+		if valid:
+			self.endGame()

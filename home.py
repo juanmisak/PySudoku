@@ -1,13 +1,13 @@
 '''
 Created on 24/07/2013
 
-@author: Esteban
+@author:Juan
 '''
-
 from PyQt4.QtGui import QMainWindow
 from ui_home import Ui_Home
 from developer import Developer
 from mainwindow import MainWindow
+from estadistica import Estadistica
 
 class Home(QMainWindow):
 
@@ -17,7 +17,8 @@ class Home(QMainWindow):
         self.ui.setupUi(self)       
         self.ui.btnJugar.clicked.connect(self.onBtnJugarClicked)
         self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
-    
+        self.ui.btnEstadistica.clicked.connect(self.onBtnEstadisticaClicked)
+        
     def onBtnJugarClicked(self):
         # Facil 36 vacias
         if self.ui.radioButtonFacil.isChecked():
@@ -42,7 +43,12 @@ class Home(QMainWindow):
         self.d.setVisible(True)
         self.close()
               
-            
+    def onBtnEstadisticaClicked(self):
+        self.e = Estadistica()
+        self.e.setVisible(True)
+        self.e.graficarEstadisticas("Juan",133,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
+        self.close()
+          
 if __name__ == '__main__':
     import sys
     from PyQt4.QtGui import QApplication

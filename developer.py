@@ -1,7 +1,7 @@
 '''
 Created on 25/07/2013
 
-@author: Esteban
+@author:Juan
 '''
 
 from PyQt4.QtGui import QMainWindow
@@ -16,8 +16,8 @@ class Developer(QMainWindow):
         self.ui.setupUi(self)    
     #    self.ui.btnInicio.clicked.connect(self.onBtnInicioClicked)
     
-    #def onBtnInicioClicked(self):
+   # def onBtnInicioClicked(self):
     #    self.h = Home()
-    #    self.h.setVisible(True)
-    #    self.close()
+     #   self.h.setVisible(True)
+      #  self.close()
         

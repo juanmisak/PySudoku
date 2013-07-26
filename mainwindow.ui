@@ -429,7 +429,7 @@
    <string>QtSudoku v1.0</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Resources.qrc">
+   <iconset>
     <normaloff>:/images/qt_sudoku.ico</normaloff>:/images/qt_sudoku.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -469,13 +469,13 @@
         </font>
        </property>
        <property name="toolTip">
-        <string>Jugador</string>
+        <string>Player's name</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</iconset>
        </property>
        <property name="iconSize">
@@ -497,13 +497,13 @@
         </font>
        </property>
        <property name="toolTip">
-        <string>Tiempo</string>
+        <string>Time</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Maps-and-Geolocation-Compass.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Maps-and-Geolocation-Compass.ico</iconset>
        </property>
        <property name="iconSize">
@@ -525,13 +525,13 @@
         </font>
        </property>
        <property name="toolTip">
-        <string>Puntos</string>
+        <string>Points</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="Resources.qrc">
+        <iconset>
          <normaloff>:/images/Visualpharm-Icons8-Metro-Style-City-Gps-device.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-City-Gps-device.ico</iconset>
        </property>
        <property name="iconSize">
@@ -563,7 +563,6 @@
    <addaction name="actionCARGAR"/>
    <addaction name="separator"/>
    <addaction name="actionINVALIDAS"/>
-   <addaction name="actionINCORRECTAS"/>
    <addaction name="actionAYUDA"/>
    <addaction name="separator"/>
    <addaction name="endGameButton"/>
@@ -572,104 +571,98 @@
   </widget>
   <action name="actionJUEGO_NUEVO">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</iconset>
    </property>
    <property name="text">
     <string>JUEGO NUEVO</string>
    </property>
+   <property name="toolTip">
+    <string>New game</string>
+   </property>
   </action>
   <action name="actionGUARDAR">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm_guardarPartida.ico</normaloff>:/images/Visualpharm_guardarPartida.ico</iconset>
    </property>
    <property name="text">
     <string>GUARDAR</string>
    </property>
    <property name="toolTip">
-    <string>GUARDAR</string>
+    <string>Save game</string>
    </property>
   </action>
   <action name="actionCARGAR">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm_cargarPartida.ico</normaloff>:/images/Visualpharm_cargarPartida.ico</iconset>
    </property>
    <property name="text">
     <string>CARGAR</string>
    </property>
    <property name="toolTip">
-    <string>CARGAR</string>
+    <string>load game</string>
    </property>
   </action>
   <action name="actionINVALIDAS">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm_jugadasInvalidas.ico</normaloff>:/images/Visualpharm_jugadasInvalidas.ico</iconset>
    </property>
    <property name="text">
     <string>INVALIDAS</string>
    </property>
    <property name="toolTip">
-    <string>JUGADAS_INVALIDAS</string>
-   </property>
-  </action>
-  <action name="actionINCORRECTAS">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/images/Visualpharm_jugadasIncorrectas.ico</normaloff>:/images/Visualpharm_jugadasIncorrectas.ico</iconset>
-   </property>
-   <property name="text">
-    <string>INCORRECTAS</string>
-   </property>
-   <property name="toolTip">
-    <string>JUGADAS_INCORRECTAS</string>
+    <string>wrong numbers</string>
    </property>
   </action>
   <action name="actionAYUDA">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm_proporcionarAyuda.ico</normaloff>:/images/Visualpharm_proporcionarAyuda.ico</iconset>
    </property>
    <property name="text">
     <string>AYUDA</string>
    </property>
    <property name="toolTip">
-    <string>AYUDA</string>
+    <string>help</string>
    </property>
   </action>
   <action name="actionATRAS">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm_atras.ico</normaloff>:/images/Visualpharm_atras.ico</iconset>
    </property>
    <property name="text">
     <string>ATRAS</string>
    </property>
+   <property name="toolTip">
+    <string>Back home</string>
+   </property>
   </action>
   <action name="actionSALIR">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm_salir.ico</normaloff>:/images/Visualpharm_salir.ico</iconset>
    </property>
    <property name="text">
     <string>SALIR</string>
    </property>
    <property name="toolTip">
-    <string>SALIR</string>
+    <string>Exit</string>
    </property>
   </action>
   <action name="endGameButton">
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Iconarchive_Termine.ico</normaloff>:/images/Iconarchive_Termine.ico</iconset>
    </property>
    <property name="text">
     <string>TERMINE</string>
    </property>
    <property name="toolTip">
-    <string>¡TERMINE!</string>
+    <string>Finish!</string>
    </property>
   </action>
  </widget>

@@ -429,7 +429,7 @@
    <string>QSudoku</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Resources.qrc">
+   <iconset>
     <normaloff>:/images/qt_sudoku.ico</normaloff>:/images/qt_sudoku.ico</iconset>
   </property>
   <widget class="QLabel" name="label">
@@ -448,9 +448,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>130</x>
      <y>120</y>
-     <width>221</width>
+     <width>161</width>
      <height>121</height>
     </rect>
    </property>
@@ -458,7 +458,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Business-Businessman.ico</iconset>
    </property>
    <property name="iconSize">
@@ -481,13 +481,13 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Estadisticas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;High Scores.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Charts-Combo.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Charts-Combo.ico</iconset>
    </property>
    <property name="iconSize">
@@ -517,7 +517,7 @@
     </font>
    </property>
    <property name="title">
-    <string>Jugador</string>
+    <string>Player</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -537,10 +537,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Fácil</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
+        <string>Easy</string>
        </property>
       </widget>
      </item>
@@ -552,7 +549,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Intermedio</string>
+        <string>Intermediate</string>
        </property>
       </widget>
      </item>
@@ -564,7 +561,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Difícil</string>
+        <string>Hard</string>
        </property>
       </widget>
      </item>
@@ -580,14 +577,14 @@
      </rect>
     </property>
     <property name="placeholderText">
-     <string>Nombre</string>
+     <string>Name</string>
     </property>
    </widget>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>130</x>
      <y>10</y>
      <width>361</width>
      <height>91</height>
@@ -599,7 +596,7 @@
     </font>
    </property>
    <property name="text">
-    <string>QSudoku</string>
+    <string>PySud  ku</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnJugar">
@@ -612,13 +609,13 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Jugar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Let's play!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Objects-Joystick.ico</iconset>
    </property>
    <property name="iconSize">
@@ -641,7 +638,7 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Desarrolladores&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;About this.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
@@ -650,13 +647,42 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</iconset>
    </property>
    <property name="iconSize">
     <size>
      <width>75</width>
      <height>75</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>41</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PySudoku v1.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/Mysitemyway-Blue-Jeans-Social-Media-Delicious-square.ico</normaloff>:/images/Mysitemyway-Blue-Jeans-Social-Media-Delicious-square.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
     </size>
    </property>
    <property name="flat">

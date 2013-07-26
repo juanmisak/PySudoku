@@ -429,7 +429,7 @@
    <string>Desarrolladores</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Resources.qrc">
+   <iconset>
     <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Subculture-Glasses.ico</iconset>
   </property>
   <widget class="QLabel" name="label_3">
@@ -527,7 +527,7 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Regresar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Back Home&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="autoFillBackground">
     <bool>true</bool>
@@ -536,7 +536,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Very-Basic-Home.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Very-Basic-Home.ico</iconset>
    </property>
    <property name="iconSize">
@@ -607,7 +607,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Escuela Superior Politecnica del Litoral (ESPOL)</string>
+    <string>Escuela Superior Politécnica del Litoral (ESPOL)</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -646,11 +646,14 @@
    <property name="cursor">
     <cursorShape>ArrowCursor</cursorShape>
    </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GitHub.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Logos-Github.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Logos-Github.ico</iconset>
    </property>
    <property name="iconSize">
@@ -700,7 +703,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Estudiantes de Ingenieria en Ciencias Computacionales</string>
+    <string>Estudiantes de Ingeniería en Ciencias Computacionales</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -725,7 +728,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Visualpharm-Icons8-Metro-Style-Management-Online-support.ico</normaloff>:/images/Visualpharm-Icons8-Metro-Style-Management-Online-support.ico</iconset>
    </property>
    <property name="iconSize">
@@ -757,7 +760,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Deleket-Social-Networking-Facebook.ico</normaloff>:/images/Deleket-Social-Networking-Facebook.ico</iconset>
    </property>
    <property name="iconSize">
@@ -783,7 +786,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Deleket-Social-Networking-Facebook.ico</normaloff>:/images/Deleket-Social-Networking-Facebook.ico</iconset>
    </property>
    <property name="iconSize">
@@ -809,7 +812,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="Resources.qrc">
+    <iconset>
      <normaloff>:/images/Deleket-Social-Networking-Facebook.ico</normaloff>:/images/Deleket-Social-Networking-Facebook.ico</iconset>
    </property>
    <property name="iconSize">
@@ -868,7 +871,7 @@
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>70</y>
+     <y>73</y>
      <width>171</width>
      <height>31</height>
     </rect>

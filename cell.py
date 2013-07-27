@@ -19,6 +19,8 @@ class Cell(QWidget):
 		self.annotations = []
 		for i in range(9):
 			self.annotations.append( QLabel('--') )
+			self.setStyleSheet("font: italic 6pt Courier 20 Pitch; background-color: transparent;")
+		self.setStyleSheet("font: italic 26pt Courier 20 Pitch; background-color: rgb(82, 163, 53);border-image: url(:/images/Mysitemyway-Blue-Jeans-Social-Media-Delicious-square.ico);")
 		# Put first annotation on first widget
 		self.emptyAnnotation = 0
 
@@ -33,9 +35,11 @@ class Cell(QWidget):
 		if self.mode == 'Final':
 			self.value.setText(str(value))
 			self.valueChanged.emit(value)
+			self.setStyleSheet("font:26pt Courier 20 Pitch; background-color: rgb(82, 163, 53);")
 		# if it's in annotation mode, add an annotation
 		elif self.mode == 'Annotation':
 			self.annotations[self.emptyAnnotation].setText(str(value))
+			self.setStyleSheet("font: italic 9pt Courier 20 Pitch; background-color: rgb(82, 163, 53);")
 			# Put next annotation on next widget
 			self.emptyAnnotation = (self.emptyAnnotation + 1) % 9
 

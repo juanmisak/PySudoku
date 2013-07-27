@@ -20,6 +20,7 @@ class Home(QMainWindow):
         self.ui.btnEstadistica.clicked.connect(self.onBtnEstadisticaClicked)
         
     def onBtnJugarClicked(self):
+
         # Facil 36 vacias
         if self.ui.radioButtonFacil.isChecked():
             difficulty = 1
@@ -33,6 +34,7 @@ class Home(QMainWindow):
             difficulty = 1           
         self.setVisible(False)
         self.w = MainWindow()
+        self.w.setHome(self)
         self.w.show()           
         self.w.newGame(difficulty,self.ui.txtNombre.text())
             
@@ -48,6 +50,8 @@ class Home(QMainWindow):
         self.e.setVisible(True)
         self.e.graficarEstadisticas("Juan",133,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
         self.close()
+    
+    
           
 if __name__ == '__main__':
     import sys

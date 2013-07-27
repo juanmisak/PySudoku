@@ -1,5 +1,5 @@
 from PyQt4.QtCore import pyqtSignal,QTimer,QString
-from PyQt4.QtGui import QMainWindow, QMessageBox
+from PyQt4.QtGui import QMainWindow
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
 #from home import Home
@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
 		self.ui.setupUi(self)
 		self.initBoard()
 		self.ui.actionSALIR.triggered.connect(self.onActionSalirTriggered)
-		#self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
+		self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
 		
 	def initTimer(self):
 		self.timer = QTimer()
@@ -28,9 +28,6 @@ class MainWindow(QMainWindow):
 		self.m = 0
 		self.s = 0		
 		self.timer.timeout.connect(self.timerTimeout)
-
-	def stopTimer(self):
-		self.timer.stop()
 		
 	def timerTimeout(self):
 		self.s = self.s + 1
@@ -42,7 +39,7 @@ class MainWindow(QMainWindow):
 			self.h= self.h + 1
 		elif self.h > 23:
 			self.h = 0
-		# Write time in lcd
+		# Write time in a pushButton
 		self.ui.btnTiempo.setText(QString ("%1:%2:%3")
                                     .arg (self.h)
                                     .arg (self.m)
@@ -75,9 +72,6 @@ class MainWindow(QMainWindow):
 		self.initTimer()
 		self.ui.btnJugador.setText(name)
 
-	def endGame(self):
-		self.stopTimer()
-
 	def setCellValue(self, index, value):
 		self.board[index].setValue(value)
 		# TODO change color to indicate that it's precalculated
@@ -86,22 +80,17 @@ class MainWindow(QMainWindow):
 		c = self.sender()
 
 		self.cellValueChanged.emit( self.board.index(c), value )
-
+	
 	def onActionSalirTriggered(self):
 		self.close()
+	
+	def setHome(self,v):
+		self.atras = v
+		
+	
+	def onActionAtrasTriggered(self):		
+		self.hide()
+		self.atras.show()
+				
+	
 
-	#def onActionAtrasTriggered(self):
-	#	self.home = Home()
-	#	self.home.setVisible(True)
-	#	self.close()
-
-	def on_endGameButton_triggered(self):
-		msj = QMessageBox()
-
-		valid = self.sudoku.validate()
-
-		msj.setText( "Valido" if valid else "NO valido" )
-		msj.exec_()
-
-		if valid:
-			self.endGame()

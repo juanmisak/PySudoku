@@ -2,7 +2,7 @@ from PyQt4.QtCore import pyqtSignal,QTimer,QString
 from PyQt4.QtGui import QMainWindow, QMessageBox
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
-#from home import Home
+
 from keyboard import Keyboard
 from sudoku import Sudoku
 
@@ -17,6 +17,7 @@ class MainWindow(QMainWindow):
 		self.ui = Ui_MainWindow()
 		self.ui.setupUi(self)
 		self.initBoard()
+		self.ui.actionJUEGO_NUEVO.triggered.connect(self.onActionJuegoNuevoTriggered)
 		self.ui.actionSALIR.triggered.connect(self.onActionSalirTriggered)
 		self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
 		
@@ -66,11 +67,11 @@ class MainWindow(QMainWindow):
 			# Change cell value when user change cell value
 			c.valueChanged.connect(self.setCellValueFromView)
 
-	def newGame(self, difficulty,name):
+	def newGame(self,name):
 		# Generate new sudoku board
 		self.sudoku = Sudoku()
 		self.sudoku.cellValueChanged.connect(self.setCellValue)
-		self.sudoku.shuffle(difficulty*9 + 3*9)
+		self.sudoku.shuffle(self.difficulty*9 + 3*9)
 		self.sudoku.cellValueChanged.disconnect(self.setCellValue)		
 		# Update the model when the view is changed
 		self.cellValueChanged.connect(self.sudoku.setCellValue)
@@ -96,9 +97,16 @@ class MainWindow(QMainWindow):
 	def setHome(self,v):
 		self.atras = v
 		
-	
+	def setDifficulty(self,value):
+		self.difficulty = value
+		
+	def onActionJuegoNuevoTriggered(self):		
+		name = self.ui.btnJugador.text()
+		self.newGame(name)
+		
+		
 	def onActionAtrasTriggered(self):		
-		self.hide()
+		self.hide()		
 		self.atras.show()
 				
 	

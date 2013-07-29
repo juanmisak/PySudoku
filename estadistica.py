@@ -21,6 +21,9 @@ class Estadistica(QtGui.QMainWindow):
         
         self.lienzo=QtGui.QGraphicsScene()
         self.ui.graphicsView.setScene(self.lienzo)
+
+    def setHomeWindow(self, homeWindow):
+    	self.homeWindow = homeWindow
         
     def graficarEstadisticas(self,n1,p1,n2,p2,n3,p3,n4,p4,n5,p5):
         self.blackBrush = Qt.QBrush(Qt.QColor("black"))

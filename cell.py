@@ -20,7 +20,11 @@ class Cell(QWidget):
 		for i in range(9):
 			self.annotations.append( QLabel('--') )
 			self.setStyleSheet("font: italic 6pt Courier 20 Pitch; background-color: transparent;")
+<<<<<<< HEAD
 		self.setStyleSheet("font: italic 26pt Courier 20 Pitch; background-color: rgb(82, 163, 53);border-image: url(:/images/Mysitemyway-Blue-Jeans-Social-Media-Delicious-square.ico);")
+=======
+			self.setStyleSheet("font: italic 26pt Courier 20 Pitch; background-color: rgb(82, 163, 53);border-image: url(:/images/Mysitemyway-Blue-Jeans-Social-Media-Delicious-square.ico);")
+>>>>>>> 68fc1ba6f32cc5b3bfb1ded01960a06d25041e32
 		# Put first annotation on first widget
 		self.emptyAnnotation = 0
 

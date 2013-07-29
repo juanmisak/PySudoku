@@ -15,7 +15,7 @@ class Home(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_Home()
         self.ui.setupUi(self)       
-        self.ui.btnJugar.clicked.connect(self.onBtnJugarClicked)
+        self.ui.btnJugar    .clicked.connect(self.onBtnJugarClicked)
         self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
         self.ui.btnEstadistica.clicked.connect(self.onBtnEstadisticaClicked)
         
@@ -35,13 +35,15 @@ class Home(QMainWindow):
         self.setVisible(False)
         self.w = MainWindow()
         self.w.setHome(self)
-        self.w.show()           
-        self.w.newGame(difficulty,self.ui.txtNombre.text())
+        self.w.show()
+        self.w.setDifficulty(difficulty)           
+        self.w.newGame(self.ui.txtNombre.text())
             
         # def onBtnDesarrolladoresClicked(self):
-        # self.ui.btnDesarrolladores 
-    def onBtnDesarrolladoresClicked(self): 
+        # self.ui.btnDesarrolladores     
+    def onBtnDesarrolladoresClicked(self):         
         self.d = Developer()
+        self.d.setHome(self)
         self.d.setVisible(True)
         self.close()
               
@@ -50,9 +52,7 @@ class Home(QMainWindow):
         self.e.setVisible(True)
         self.e.graficarEstadisticas("Juan",130,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
         self.close()
-    
-    
-          
+         
 if __name__ == '__main__':
     import sys
     from PyQt4.QtGui import QApplication

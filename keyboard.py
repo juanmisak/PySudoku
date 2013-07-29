@@ -1,13 +1,7 @@
 from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtGui import QWidget, QGridLayout, QPushButton
-from PyQt4 import QtCore,QtGui
 
 
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    def _fromUtf8(s):
-        return s
 
 
 
@@ -27,7 +21,7 @@ class Keyboard(QWidget):
 		for i in range(1, 10):
 			number = QPushButton(str(i))
 			number.clicked.connect(self.selectNumber)	
-							
+			number.setStyleSheet("color: grey;")			
 			# Given a number Z you can deduce a formula to get
 			# its row and column. In orden to get the layout
 			# y,x| 0 1 2
@@ -45,15 +39,18 @@ class Keyboard(QWidget):
 
 		modeButtons = [
 			('F', 3, 0, self.setModeToFinal),
+<<<<<<< HEAD
             ('A', 3, 2, self.setModeToAnnotation)
             
+=======
+            ('A', 3, 2, self.setModeToAnnotation)            
+>>>>>>> 68fc1ba6f32cc5b3bfb1ded01960a06d25041e32
 		]
 
 		for b in modeButtons:
-			button = QPushButton(b[0])
+			button = QPushButton(b[0])            
 			self.keyboard.addWidget(button, b[1], b[2])
-			button.clicked.connect(b[3])
-
+			button.clicked.connect(b[3])                        
 		self.hide()
 
 	def selectNumber(self):

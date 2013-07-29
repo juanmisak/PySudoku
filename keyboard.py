@@ -39,12 +39,9 @@ class Keyboard(QWidget):
 
 		modeButtons = [
 			('F', 3, 0, self.setModeToFinal),
-<<<<<<< HEAD
-            ('A', 3, 2, self.setModeToAnnotation)
-            
-=======
-            ('A', 3, 2, self.setModeToAnnotation)            
->>>>>>> 68fc1ba6f32cc5b3bfb1ded01960a06d25041e32
+
+			('A', 3, 2, self.setModeToAnnotation)            
+      
 		]
 
 		for b in modeButtons:

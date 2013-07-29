@@ -93,10 +93,10 @@ class MainWindow(QMainWindow):
 	
 	def onActionSalirTriggered(self):
 		self.close()
-	
-	def setHome(self,v):
-		self.atras = v
-		
+
+	def setHomeWindow(self, homeWindow):
+		self.homeWindow = homeWindow
+
 	def setDifficulty(self,value):
 		self.difficulty = value
 		
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
 		
 	def onActionAtrasTriggered(self):		
 		self.hide()		
-		self.atras.show()
+		self.homeWindow.show()
 				
 	
 	def on_endGameButton_triggered(self):

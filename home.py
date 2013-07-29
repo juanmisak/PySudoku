@@ -18,6 +18,14 @@ class Home(QMainWindow):
         self.ui.btnJugar    .clicked.connect(self.onBtnJugarClicked)
         self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
         self.ui.btnEstadistica.clicked.connect(self.onBtnEstadisticaClicked)
+
+        # Init windows
+        self.mainWindow = MainWindow()
+        self.mainWindow.setHomeWindow(self)
+        self.developersWindow = Developer()
+        self.developersWindow.setHomeWindow(self)
+        self.highscoresWindow = Estadistica()
+        self.highscoresWindow.setHomeWindow(self)
         
     def onBtnJugarClicked(self):
 
@@ -33,24 +41,19 @@ class Home(QMainWindow):
         else:
             difficulty = 1           
         self.setVisible(False)
-        self.w = MainWindow()
-        self.w.setHome(self)
-        self.w.show()
-        self.w.setDifficulty(difficulty)           
-        self.w.newGame(self.ui.txtNombre.text())
+        self.mainWindow.show()
+        self.mainWindow.setDifficulty(difficulty)
+        self.mainWindow.newGame(self.ui.txtNombre.text())
             
         # def onBtnDesarrolladoresClicked(self):
         # self.ui.btnDesarrolladores     
     def onBtnDesarrolladoresClicked(self):         
-        self.d = Developer()
-        self.d.setHome(self)
-        self.d.setVisible(True)
+        self.developersWindow.show()
         self.close()
               
     def onBtnEstadisticaClicked(self):
-        self.e = Estadistica()
-        self.e.setVisible(True)
-        self.e.graficarEstadisticas("Juan",130,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
+        self.highscoresWindow.show()
+        self.highscoresWindow.graficarEstadisticas("Juan",133,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
         self.close()
          
 if __name__ == '__main__':

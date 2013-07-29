@@ -45,8 +45,10 @@ class Keyboard(QWidget):
 
 		modeButtons = [
 			('F', 3, 0, self.setModeToFinal),
-			('A', 3, 1, self.setModeToAnnotation)
+            ('A', 3, 2, self.setModeToAnnotation)
+            
 		]
+
 		for b in modeButtons:
 			button = QPushButton(b[0])
 			self.keyboard.addWidget(button, b[1], b[2])

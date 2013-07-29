@@ -57,10 +57,12 @@ class MainWindow(QMainWindow):
 			x = i % 9
 			y = i / 9
 			c = Cell()
+			
 			self.board.append(c)
 			self.ui.board.addWidget(c, y, x)
+			
 			c.setKeyboard(self.keyboard)
-
+			#self.setStyleSheet("font: italic 13pt Courier 50 Pitch; background-color: rgb(82, 163, 53);"#)
 			# Change cell value when user change cell value
 			c.valueChanged.connect(self.setCellValueFromView)
 
@@ -79,6 +81,7 @@ class MainWindow(QMainWindow):
 		self.stopTimer()
 
 	def setCellValue(self, index, value):
+		
 		self.board[index].setValue(value)
 		# TODO change color to indicate that it's precalculated
 

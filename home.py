@@ -48,7 +48,7 @@ class Home(QMainWindow):
     def onBtnEstadisticaClicked(self):
         self.e = Estadistica()
         self.e.setVisible(True)
-        self.e.graficarEstadisticas("Juan",133,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
+        self.e.graficarEstadisticas("Juan",130,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
         self.close()
     
     

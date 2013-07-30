@@ -17,7 +17,7 @@ class Developer(QMainWindow):
         self.ui.btnInicio.clicked.connect(self.onBtnInicioClicked)
     
     def setHomeWindow(self, homeWindow):
-    	self.homeWindow = homeWindow
+            self.homeWindow = homeWindow
         
     def onBtnInicioClicked(self):
         self.hide()

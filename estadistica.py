@@ -18,12 +18,13 @@ class Estadistica(QtGui.QMainWindow):
         QtGui.QMainWindow.__init__(self)
         self.ui=Ui_Estadistica()
         self.ui.setupUi(self)
+        self.ui.pushButton_7.clicked.connect(self.onBtnInicioClicked)
         
         self.lienzo=QtGui.QGraphicsScene()
         self.ui.graphicsView.setScene(self.lienzo)
 
     def setHomeWindow(self, homeWindow):
-    	self.homeWindow = homeWindow
+        self.homeWindow = homeWindow
         
     def graficarEstadisticas(self,n1,p1,n2,p2,n3,p3,n4,p4,n5,p5):
         self.blackBrush = Qt.QBrush(Qt.QColor("black"))
@@ -35,37 +36,43 @@ class Estadistica(QtGui.QMainWindow):
         self.Puntuacion4 =  200*p4/p1
         self.Puntuacion5 =  200*p5/p1
         self.width = 40
+        self.widthN = 80
         s=1.5
           
         self.rectangulo = QGraphicsRectItem()
         self.nombre = QGraphicsTextItem()   
         
-        self.rectangulo = self.lienzo.addRect(80.0,35.0, self.width,-self.Puntuacion1,self.blackPen,self.blackBrush)
-        self.rectangulo = self.lienzo.addRect(160.0,35.0, self.width,-self.Puntuacion2,self.blackPen,self.blackBrush)
-        self.rectangulo = self.lienzo.addRect(240.0,35.0, self.width,-self.Puntuacion3,self.blackPen,self.blackBrush)
-        self.rectangulo = self.lienzo.addRect(320.0,35.0, self.width,-self.Puntuacion4,self.blackPen,self.blackBrush)
-        self.rectangulo = self.lienzo.addRect(400.0,35.0, self.width,-self.Puntuacion5,self.blackPen,self.blackBrush)
+        self.rectangulo = self.lienzo.addRect(-180.0,self.widthN, self.width,-self.Puntuacion1,self.blackPen,self.blackBrush)
+        self.rectangulo = self.lienzo.addRect(-100.0,self.widthN, self.width,-self.Puntuacion2,self.blackPen,self.blackBrush)
+        self.rectangulo = self.lienzo.addRect(-20.0,self.widthN, self.width,-self.Puntuacion3,self.blackPen,self.blackBrush)
+        self.rectangulo = self.lienzo.addRect(40.0,self.widthN, self.width,-self.Puntuacion4,self.blackPen,self.blackBrush)
+        self.rectangulo = self.lienzo.addRect(120.0,self.widthN, self.width,-self.Puntuacion5,self.blackPen,self.blackBrush)
         
         self.nombre = self.lienzo.addText(n5)
-        self.nombre.setX(385) 
-        self.nombre.setY(self.width)
+        self.nombre.setX(120) 
+        self.nombre.setY(self.widthN)
         self.nombre.setScale(s)
         self.nombre = self.lienzo.addText(n4)
-        self.nombre.setX(315) 
-        self.nombre.setY(self.width) 
+        self.nombre.setX(40) 
+        self.nombre.setY(self.widthN) 
         self.nombre.setScale(s)
         self.nombre = self.lienzo.addText(n3)
-        self.nombre.setX(225) 
-        self.nombre.setY(self.width)
+        self.nombre.setX(-40) 
+        self.nombre.setY(self.widthN)
         self.nombre.setScale(s)
         self.nombre = self.lienzo.addText(n2)
-        self.nombre.setX(138) 
-        self.nombre.setY(self.width)
+        self.nombre.setX(-130) 
+        self.nombre.setY(self.widthN)
         self.nombre.setScale(s)
         self.nombre = self.lienzo.addText(n1)
-        self.nombre.setX(75) 
-        self.nombre.setY(self.width)
+        self.nombre.setX(-200) 
+        self.nombre.setY(self.widthN)
         self.nombre.setScale(s)
                
+        
+        
+    def onBtnInicioClicked(self):
+        self.hide()
+        self.homeWindow.show()
+        
         self.setWindowState(QtCore.Qt.WindowActive)
-

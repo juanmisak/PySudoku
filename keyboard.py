@@ -21,7 +21,8 @@ class Keyboard(QWidget):
 		for i in range(1, 10):
 			number = QPushButton(str(i))
 			number.clicked.connect(self.selectNumber)	
-			number.setStyleSheet("color: grey;")			
+			number.setStyleSheet("background-color: #0029A3; font:17pt Courier 20 Pitch;color: rgb(255, 255, 255);")
+			
 			# Given a number Z you can deduce a formula to get
 			# its row and column. In orden to get the layout
 			# y,x| 0 1 2
@@ -45,9 +46,15 @@ class Keyboard(QWidget):
 		]
 
 		for b in modeButtons:
-			button = QPushButton(b[0])            
+			button = QPushButton(b[0]) 
 			self.keyboard.addWidget(button, b[1], b[2])
-			button.clicked.connect(b[3])                        
+			button.clicked.connect(b[3])  
+			button.setStyleSheet("background-color:#002182; font:17pt Courier Courier 20 Pitch;color: rgb(255, 255, 255);")
+			if(button.text()=="F"):
+				button.setToolTip("Final")
+			if(button.text()=="A"):
+				button.setToolTip("Annotation")
+			
 		self.hide()
 
 	def selectNumber(self):

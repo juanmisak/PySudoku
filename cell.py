@@ -39,7 +39,7 @@ class Cell(QWidget):
 		# if it's in annotation mode, add an annotation
 		elif self.mode == 'Annotation':
 			self.annotations[self.emptyAnnotation].setText(str(value))
-			self.setStyleSheet("font: italic 9pt Courier 20 Pitch; background-color: rgb(82, 163, 53);")
+			self.setStyleSheet("font: italic 10pt Courier 29 Pitch; background-color: rgb(82, 163, 53);")
 			# Put next annotation on next widget
 			self.emptyAnnotation = (self.emptyAnnotation + 1) % 9
 

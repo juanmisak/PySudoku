@@ -54,13 +54,3 @@ class Home(QMainWindow):
     def onBtnEstadisticaClicked(self):
         self.highscoresWindow.show()
         self.setVisible(False)
-         
-if __name__ == '__main__':
-    import sys
-    from PyQt4.QtGui import QApplication
-    
-    app = QApplication(sys.argv) 
-    h = Home()   
-    h.show()
-
-    sys.exit(app.exec_())

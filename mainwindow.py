@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
 	def initBoard(self):
 		self.board = []
 
-		self.keyboard = Keyboard(self.ui.centralWidget)
+		self.keyboard = Keyboard(self)
 
 		for i in range(9*9):
 			x = i % 9

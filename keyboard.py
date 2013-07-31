@@ -1,4 +1,4 @@
-from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSignal, Qt
 from PyQt4.QtGui import QWidget, QGridLayout, QPushButton
 
 
@@ -12,7 +12,7 @@ class Keyboard(QWidget):
 	numberSelected = pyqtSignal(int)
 
 	def __init__(self, parent):
-		QWidget.__init__(self, parent)
+		QWidget.__init__(self, parent, Qt.Popup)
 
 		self.attachedCell = None
 		self.keyboard = QGridLayout()
@@ -80,6 +80,8 @@ class Keyboard(QWidget):
 			self.numberSelected.connect(cell.setValue)
 			self.modeChanged.connect(cell.setMode)
 			self.attachedCell = cell
-			self.move(cell.pos().x() + 25, cell.pos().y() + 90)
+			x = self.parentWidget().pos().x() + cell.pos().x() + 130
+			y = self.parentWidget().pos().y() + cell.pos().y() + 150
+			self.move(x, y)
 			self.show()
 

@@ -10,6 +10,7 @@ Created on 25/07/2013
 from PyQt4.QtGui import QGraphicsRectItem,QGraphicsTextItem
 from ui_estadistica import Ui_Estadistica
 from PyQt4 import QtCore,QtGui,Qt
+from highscore import HighScore
 
 
 
@@ -23,9 +24,18 @@ class Estadistica(QtGui.QMainWindow):
         self.lienzo=QtGui.QGraphicsScene()
         self.ui.graphicsView.setScene(self.lienzo)
 
+        self.graficar( HighScore.loadFromFile() )
+
     def setHomeWindow(self, homeWindow):
         self.homeWindow = homeWindow
-        
+
+    def graficar(self, hs):
+        self.graficarEstadisticas(hs[0].userName, hs[0].seconds,
+                hs[1].userName, hs[1].seconds,
+                hs[2].userName, hs[2].seconds,
+                hs[3].userName, hs[3].seconds,
+                hs[4].userName, hs[4].seconds)
+
     def graficarEstadisticas(self,n1,p1,n2,p2,n3,p3,n4,p4,n5,p5):
         self.blackBrush = Qt.QBrush(Qt.QColor("black"))
         self.blackPen = Qt.QPen(Qt.QColor("black"))

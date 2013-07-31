@@ -53,7 +53,6 @@ class Home(QMainWindow):
               
     def onBtnEstadisticaClicked(self):
         self.highscoresWindow.show()
-        self.highscoresWindow.graficarEstadisticas("Juan",133,"Esteban",106,"Ramon",84,"Micka",50,"Andrea",40)
         self.setVisible(False)
          
 if __name__ == '__main__':

@@ -2,6 +2,7 @@ from PyQt4.QtCore import pyqtSignal,QTimer,QString
 from PyQt4.QtGui import QMainWindow, QMessageBox
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
+from highscore import HighScore
 
 from keyboard import Keyboard
 from sudoku import Sudoku
@@ -20,7 +21,7 @@ class MainWindow(QMainWindow):
 		self.ui.actionJUEGO_NUEVO.triggered.connect(self.onActionJuegoNuevoTriggered)
 		self.ui.actionSALIR.triggered.connect(self.onActionSalirTriggered)
 		self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
-		
+
 	def initTimer(self):
 		self.timer = QTimer()
 		self.timer.setInterval(1000)
@@ -80,6 +81,25 @@ class MainWindow(QMainWindow):
 
 	def endGame(self):
 		self.stopTimer()
+
+		userName = str(self.ui.btnJugador.text())
+		seconds = int(self.s) + int(self.m) * 60 + int(self.h) * 60 * 60
+		difficulty = ['Easy', 'Medium', 'Hard'][self.difficulty - 1]
+
+		# Check if current score is a high scores
+		highscores = HighScore.loadFromFile()
+		highscores.reverse()
+		if seconds < highscores[0].seconds:
+			msj = QMessageBox()
+			msj.setText( "Puntaje alto" )
+			msj.exec_()
+
+			# Put score in highscore
+			highscores.append( HighScore(userName, seconds, difficulty) )
+			highscores.sort()
+			highscores.pop()
+
+			HighScore.saveToFile(highscores)
 
 	def setCellValue(self, index, value):
 		

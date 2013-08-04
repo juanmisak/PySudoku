@@ -40,11 +40,12 @@ class Estadistica(QtGui.QMainWindow):
         self.blackBrush = Qt.QBrush(Qt.QColor("black"))
         self.blackPen = Qt.QPen(Qt.QColor("black"))
         
-        self.Puntuacion1 =  200*p1/p1
-        self.Puntuacion2 =  200*p2/p1
-        self.Puntuacion3 =  200*p3/p1
-        self.Puntuacion4 =  200*p4/p1
-        self.Puntuacion5 =  200*p5/p1
+                
+        self.Puntuacion1 = 200-(180*p1/p5)
+        self.Puntuacion2 = 200-(180*p2/p5)
+        self.Puntuacion3 = 200-(180*p3/p5)
+        self.Puntuacion4 = 200-(180*p4/p5)
+        self.Puntuacion5 = 200-(180*p5/p5)
         self.width = 40
         self.widthN = 80
         s=1.5

@@ -20,11 +20,27 @@ class Sudoku(QObject):
 			3,4,5,2,8,6,1,7,9
 		]
 
+	@staticmethod
+	def fromString(s):
+		sudoku = Sudoku()
+		sudoku.board = []
+
+		for c in s:
+			sudoku.board.append( int(c) )
+
+		return sudoku
+
 	def __str__(self):
 		s = ''
 		for i in range( len( self.board ) ):
 			if ( i % 9 == 0 ): s += "\n"
 			s += str( self.board[i] ) + ' '
+		return s
+
+	def __repr__(self):
+		s = ''
+		for c in self.board:
+			s += str(c)
 		return s
 
 	def setCellValue(self, index, value):

@@ -3,6 +3,7 @@ from PyQt4.QtGui import QMainWindow, QMessageBox
 from ui_mainwindow import Ui_MainWindow
 from cell import Cell
 from highscore import HighScore
+from loadgames import Game, LoadGames
 
 from keyboard import Keyboard
 from sudoku import Sudoku
@@ -21,6 +22,8 @@ class MainWindow(QMainWindow):
 		self.ui.actionJUEGO_NUEVO.triggered.connect(self.onActionJuegoNuevoTriggered)
 		self.ui.actionSALIR.triggered.connect(self.onActionSalirTriggered)
 		self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
+
+		self.loadGamesWindow = LoadGames(self)
 
 	def initTimer(self):
 		self.timer = QTimer()
@@ -140,3 +143,15 @@ class MainWindow(QMainWindow):
 
 		if valid:
 			self.endGame()
+
+	def on_actionGUARDAR_triggered(self):
+		userName = str(self.ui.btnJugador.text())
+		seconds = int(self.s) + int(self.m) * 60 + int(self.h) * 60 * 60
+
+		games = Game.loadFromFile()
+		games.append( Game(userName, seconds, self.sudoku) )
+		Game.saveToFile(games)
+
+	def on_actionCARGAR_triggered(self):
+		self.loadGamesWindow.initData()
+		self.loadGamesWindow.show()

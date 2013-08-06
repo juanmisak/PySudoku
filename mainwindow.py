@@ -12,8 +12,6 @@ from sudoku import Sudoku
    :version: 1.0""" 
 class MainWindow(QMainWindow):
 
-<<<<<<< HEAD
-
     # Signals
     cellValueChanged = pyqtSignal(int, int)
 
@@ -174,7 +172,6 @@ class MainWindow(QMainWindow):
         self.loadGamesWindow.initData()
         self.loadGamesWindow.show()
 
-=======
 	# Signals
 	cellValueChanged = pyqtSignal(int, int)
 
@@ -325,4 +322,3 @@ class MainWindow(QMainWindow):
 	def on_actionCARGAR_triggered(self):
 		self.loadGamesWindow.loadData()
 		self.loadGamesWindow.show()
->>>>>>> de949b24153cf909719efc726700cd6c0340f261

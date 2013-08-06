@@ -72,12 +72,9 @@ class Sudoku(QObject):
 				self.board[i] = 0
 				empty -= 1
 
-<<<<<<< HEAD
 		''' Emit signal for filled cells'''
-=======
 	def triggerChanges(self):
 		# Emit signal for filled cells
->>>>>>> de949b24153cf909719efc726700cd6c0340f261
 		for i in range( len(self.board) ):
 			self.cellValueChanged.emit(i, self.board[i])
 

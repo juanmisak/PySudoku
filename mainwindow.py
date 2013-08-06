@@ -8,7 +8,7 @@ from loadgames import Game, LoadGames
 from keyboard import Keyboard
 from sudoku import Sudoku
 """Clase que permite agragar celdas a mi layout*. 
-   :author: Esteban Munoz & Ramón Carrillo 
+   :author: Esteban Munoz & Ramon Carrillo 
    :version: 1.0""" 
 class MainWindow(QMainWindow):
 

@@ -2,7 +2,7 @@ from PyQt4.QtCore import pyqtSignal, Qt
 from PyQt4.QtGui import QWidget, QGridLayout, QPushButton
 """Clase que permite mostrar un teclado en las celdas
    de la tabla de sudoku en la ventana mainwindow. 
-   :author: Ramón Carrillo
+   :author: Ramon Carrillo
    :version: 1.0""" 
 class Keyboard(QWidget):
 	

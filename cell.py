@@ -2,7 +2,7 @@ from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtGui import QWidget, QGridLayout, QPushButton, QLabel
 from keyboard import Keyboard
 """Clase que permite agragar celdas a mi layout*. 
-   :author: Ramón Carrillo & Esteban Munoz
+   :author: Ramon Carrillo & Esteban Munoz
    :version: 1.0"""  
 class Cell(QWidget):
 

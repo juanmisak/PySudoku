@@ -4,6 +4,7 @@ from ui_loadgames import Ui_loadGames
 from datetime import date
 from lamecryptfile import LamecryptFile
 from sudoku import Sudoku
+import os
 
 class Game:
 
@@ -31,7 +32,11 @@ class Game:
 	
 	@staticmethod
 	def loadFromFile():
-		f = LamecryptFile('savedgames', 'r')
+		filename = 'savedgames'
+		if not os.path.isfile(filename):
+			open(filename, 'w').close()
+
+		f = LamecryptFile(filename, 'r')
 
 		games = []
 

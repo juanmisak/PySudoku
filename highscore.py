@@ -1,4 +1,5 @@
 from lamecryptfile import LamecryptFile
+import os
 
 class HighScore:
 
@@ -22,7 +23,11 @@ class HighScore:
 
 	@staticmethod
 	def loadFromFile():
-		f = LamecryptFile('highscores', 'r')
+		filename = 'highscores'
+		if not os.path.isfile(filename):
+			open(filename, 'w').close()
+
+		f = LamecryptFile(filename, 'r')
 		
 		highscores = []
 

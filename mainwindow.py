@@ -25,13 +25,13 @@ class MainWindow(QMainWindow):
 
 		self.loadGamesWindow = LoadGames(self)
 
-	def initTimer(self):
+	def initTimer(self, elapsedSeconds):
 		self.timer = QTimer()
 		self.timer.setInterval(1000)
 		self.timer.start()
-		self.h = 0
-		self.m = 0
-		self.s = 0		
+		self.h = elapsedSeconds / 3600
+		self.m = (elapsedSeconds - 3600*self.h) / 60
+		self.s = (elapsedSeconds - 3600*self.h) % 60
 		self.timer.timeout.connect(self.timerTimeout)
 
 	def stopTimer(self):
@@ -71,15 +71,20 @@ class MainWindow(QMainWindow):
 			# Change cell value when user change cell value
 			c.valueChanged.connect(self.setCellValueFromView)
 
-	def newGame(self,name):
-		# Generate new sudoku board
-		self.sudoku = Sudoku()
+	def newGame(self, name, elapsedSeconds = 0, sudoku = None):
+		if sudoku == None:
+			# Generate new sudoku board
+			self.sudoku = Sudoku()
+			self.sudoku.shuffle(self.difficulty*9 + 3*9)
+		else:
+			self.sudoku = sudoku
+
 		self.sudoku.cellValueChanged.connect(self.setCellValue)
-		self.sudoku.shuffle(self.difficulty*9 + 3*9)
+		self.sudoku.triggerChanges()
 		self.sudoku.cellValueChanged.disconnect(self.setCellValue)		
 		# Update the model when the view is changed
 		self.cellValueChanged.connect(self.sudoku.setCellValue)
-		self.initTimer()
+		self.initTimer(elapsedSeconds)
 		self.ui.btnJugador.setText(name)
 
 	def endGame(self):
@@ -153,5 +158,5 @@ class MainWindow(QMainWindow):
 		Game.saveToFile(games)
 
 	def on_actionCARGAR_triggered(self):
-		self.loadGamesWindow.initData()
+		self.loadGamesWindow.loadData()
 		self.loadGamesWindow.show()

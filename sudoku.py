@@ -72,10 +72,10 @@ class Sudoku(QObject):
 				self.board[i] = 0
 				empty -= 1
 
+	def triggerChanges(self):
 		# Emit signal for filled cells
 		for i in range( len(self.board) ):
-			if self.board[i] != 0:
-				self.cellValueChanged.emit(i, self.board[i])
+			self.cellValueChanged.emit(i, self.board[i])
 
 	def __swapBigRow(self, i, j):
 		for y in range(3):

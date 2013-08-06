@@ -1,3 +1,4 @@
+from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtGui import QDialog, QStandardItemModel, QStandardItem
 from ui_loadgames import Ui_loadGames
 from datetime import date
@@ -49,9 +50,9 @@ class LoadGames(QDialog):
 
 		self.ui = Ui_loadGames()
 		self.ui.setupUi(self)
-		self.initData()
+		self.loadData()
 	
-	def initData(self):
+	def loadData(self):
 		model = QStandardItemModel()
 
 		self.games = Game.loadFromFile()
@@ -67,6 +68,13 @@ class LoadGames(QDialog):
 
 	def on_pushButton_3_clicked(self):
 		self.close()
+
+	def on_pushButton_clicked(self):
+		sel = self.ui.listView.selectedIndexes()
+		if len(sel) == 1:
+			g = self.games[ sel[0].row() ]
+			self.parent().newGame(g.userName, g.seconds, g.board)
+			self.close()
 
 if __name__ == '__main__':
 	import sys

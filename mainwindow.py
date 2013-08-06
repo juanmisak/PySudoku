@@ -29,15 +29,15 @@ class MainWindow(QMainWindow):
 
         self.loadGamesWindow = LoadGames(self)
 
-    def initTimer(self):
+    def initTimer(self, elapsedSeconds):
         """Funcion que permite inicializar el timer
            que se utilizara al inicio del juego.""" 
         self.timer = QTimer()
         self.timer.setInterval(1000)
         self.timer.start()
-        self.h = 0
-        self.m = 0
-        self.s = 0      
+        self.h = elapsedSeconds / 3600
+        self.m = (elapsedSeconds - 3600*self.h) / 60
+        self.s = (elapsedSeconds - 3600*self.h) % 60
         """Coneccion de senales."""  
         self.timer.timeout.connect(self.timerTimeout)
 
@@ -82,15 +82,19 @@ class MainWindow(QMainWindow):
             c.setKeyboard(self.keyboard) 
             c.valueChanged.connect(self.setCellValueFromView)
 
-    def newGame(self,name):
+    def newGame(self, name, elapsedSeconds = 0, sudoku = None):
         """Se genera un nuevo juego de sudoku con el nombre del jugador y el nivel."""  
-        self.sudoku = Sudoku()
+        if sudoku == None:
+            self.sudoku = Sudoku()
+            self.sudoku.shuffle(self.difficulty*9 + 3*9)
+        else:
+            self.sudoku = sudoku
         self.sudoku.cellValueChanged.connect(self.setCellValue)
-        self.sudoku.shuffle(self.difficulty*9 + 3*9)
+        self.sudoku.triggerChanges()
         self.sudoku.cellValueChanged.disconnect(self.setCellValue)
         """Actualiza el modelo cuando la vista es cambiada."""    
         self.cellValueChanged.connect(self.sudoku.setCellValue)
-        self.initTimer()
+        self.initTimer(elapsedSeconds)
         self.ui.btnJugador.setText(name)
 
     def endGame(self):   
@@ -169,7 +173,7 @@ class MainWindow(QMainWindow):
         Game.saveToFile(games)
 
     def on_actionCARGAR_triggered(self):
-        self.loadGamesWindow.initData()
+        self.loadGamesWindow.loadData()
         self.loadGamesWindow.show()
 
 	# Signals

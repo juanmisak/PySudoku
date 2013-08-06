@@ -1,25 +1,25 @@
-'''
-Created on 24/07/2013
-
-@author:Juan
-'''
 from PyQt4.QtGui import QMainWindow
 from ui_home import Ui_Home
 from developer import Developer
 from mainwindow import MainWindow
 from estadistica import Estadistica
-
+"""Clase que permite mostar un menu principal al jugador
+    donde podra elegir el nivel de juego y ingresar su nombre. 
+   :author: Esteban Muñoz
+   :version: 1.0"""  
 class Home(QMainWindow):
 
     def __init__(self):
+        """Inicializador de la clase Home."""  
         QMainWindow.__init__(self)
         self.ui = Ui_Home()
-        self.ui.setupUi(self)       
+        self.ui.setupUi(self)  
+        """Coneccion de señales."""       
         self.ui.btnJugar    .clicked.connect(self.onBtnJugarClicked)
         self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
         self.ui.btnEstadistica.clicked.connect(self.onBtnEstadisticaClicked)
 
-        # Init windows
+        """Inicializacion de MainWindow.""" 
         self.mainWindow = MainWindow()
         self.mainWindow.setHomeWindow(self)
         self.developersWindow = Developer()
@@ -28,14 +28,14 @@ class Home(QMainWindow):
         self.highscoresWindow.setHomeWindow(self)
         
     def onBtnJugarClicked(self):
-
-        # Facil 36 vacias
+        """Funcion que permite seleccionar un nivel de juego""" 
+        """Nivel facil 36 celdas vacias.""" 
         if self.ui.radioButtonFacil.isChecked():
             difficulty = 1
-        # Intermedio 36+9 = 45vacias
+            """Nivel intermedio 36+9 = 45 celdas vacias."""
         elif self.ui.radioButtonIntermedio.isChecked():
             difficulty = 2
-        # Dificil 36+9+9 = 63vacias
+            """Nivel dificil 36+9+9 = 63 celdas vacias."""
         elif self.ui.radioButtonDificil.isChecked():
             difficulty = 3
         else:
@@ -44,13 +44,13 @@ class Home(QMainWindow):
         self.mainWindow.show()
         self.mainWindow.setDifficulty(difficulty)
         self.mainWindow.newGame(self.ui.txtNombre.text())
-            
-        # def onBtnDesarrolladoresClicked(self):
-        # self.ui.btnDesarrolladores     
-    def onBtnDesarrolladoresClicked(self):         
+
+    def onBtnDesarrolladoresClicked(self):   
+        """Funcion que permite mostrar la ventana de desarrolladores"""        
         self.developersWindow.show()
         self.close()
               
     def onBtnEstadisticaClicked(self):
+        """Funcion que permite mostrar la ventana de estadisticas"""     
         self.highscoresWindow.show()
         self.setVisible(False)

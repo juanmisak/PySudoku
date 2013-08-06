@@ -1,8 +1,7 @@
 import subprocess 
 import os
 import sys
-
-
+"""Clase princial para iniciar el programa y convertir los archivos ui en tipo py"""     
 uis = ['developer', 'estadistica', 'home', 'loadgames', 'mainwindow']
 
 for ui_name in uis:

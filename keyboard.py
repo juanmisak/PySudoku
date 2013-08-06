@@ -1,40 +1,43 @@
 from PyQt4.QtCore import pyqtSignal, Qt
 from PyQt4.QtGui import QWidget, QGridLayout, QPushButton
-
-
-
-
-
+"""Clase que permite mostrar un teclado en las celdas
+   de la tabla de sudoku en la ventana mainwindow. 
+   :author: Ramón Carrillo
+   :version: 1.0""" 
 class Keyboard(QWidget):
 	
-	# Signals
+	"""Señales requerias en la clase"""	
 	modeChanged = pyqtSignal(str)
 	numberSelected = pyqtSignal(int)
 
 	def __init__(self, parent):
+		"""Inicializador de la clase Keyboard.""" 
 		QWidget.__init__(self, parent, Qt.Popup)
 
 		self.attachedCell = None
 		self.keyboard = QGridLayout()
 		self.setLayout(self.keyboard)
+		"""Se generan dinamecamente un teclado con numeros
+			del 1 al 9 que permitira setear un numero en el 
+			tablero sudoku.""" 
 
 		for i in range(1, 10):
 			number = QPushButton(str(i))
 			number.clicked.connect(self.selectNumber)	
 			number.setStyleSheet("background-color: #0029A3; font:17pt Courier 20 Pitch;color: rgb(255, 255, 255);")
 			
-			# Given a number Z you can deduce a formula to get
-			# its row and column. In orden to get the layout
-			# y,x| 0 1 2
-			# ---|-------
-			# 0  | 7 8 9
-			# 1  | 4 5 6
-			# 2  | 3 2 1
-			# 3  |     0
-			#
-			# one posible formula is
-			# x = ( z + 2 ) % 3
-			# y = 3 - ( z + 2 ) / 3
+			""" #Given a number Z you can deduce a formula to get
+					# its row and column. In orden to get the layout
+					# y,x| 0 1 2
+					# ---|-------
+					# 0  | 7 8 9
+					# 1  | 4 5 6
+					# 2  | 3 2 1
+					# 3  |     0
+					#
+					# one posible formula is
+					# x = ( z + 2 ) % 3
+					# y = 3 - ( z + 2 ) / 3"""
 			
 			self.keyboard.addWidget(number, 3-(i+2)/3, (i+2)%3)
 
@@ -44,7 +47,8 @@ class Keyboard(QWidget):
 			('A', 3, 2, self.setModeToAnnotation)            
       
 		]
-
+		"""Permite añadir dos botones adicionales al keyboard que serviran 
+			para las anotaciones y final de la misma."""
 		for b in modeButtons:
 			button = QPushButton(b[0]) 
 			self.keyboard.addWidget(button, b[1], b[2])
@@ -58,6 +62,7 @@ class Keyboard(QWidget):
 		self.hide()
 
 	def selectNumber(self):
+		"""Obtine el numero que se presiono y emite una señal"""
 		button = self.sender()
 		self.hide()
 		self.numberSelected.emit( int(button.text()) )
@@ -69,6 +74,8 @@ class Keyboard(QWidget):
 		self.modeChanged.emit("Annotation")
 	
 	def activate(self):
+		"""Permite saber si se hizo clik en una de las celdas del tablero
+		   sudoku y muestra el teclado"""
 		cell = self.sender()
 
 		if cell != None:

@@ -52,7 +52,7 @@ class Sudoku(QObject):
 		return self.board[index]
 
 	def shuffle(self, empty):
-		# Swap block rows and columns
+		''' Swap block rows and columns'''
 		for swaps in range(30):
 			i = random.randint(0, 2)
 			j = random.randint(0, 2)
@@ -64,7 +64,7 @@ class Sudoku(QObject):
 			self.__swapRow(k, i, j)
 			self.__swapColumn(l, i, j)
 
-		# Empty cells
+		''' Empty cells'''
 		while empty > 0:
 			i = random.randint(0, 9*9 - 1)
 
@@ -72,7 +72,7 @@ class Sudoku(QObject):
 				self.board[i] = 0
 				empty -= 1
 
-		# Emit signal for filled cells
+		''' Emit signal for filled cells'''
 		for i in range( len(self.board) ):
 			if self.board[i] != 0:
 				self.cellValueChanged.emit(i, self.board[i])
@@ -101,7 +101,7 @@ class Sudoku(QObject):
 		self.board[a], self.board[b] = self.board[b], self.board[a]
 
 	def validate(self):
-		# validate columns
+		''' validate columns'''
 		for x in range(9):
 			
 			summation = 0; multiplication = 1
@@ -113,7 +113,7 @@ class Sudoku(QObject):
 			if summation != 45 or multiplication != 362880:
 				return False
 
-		# validate rows
+		''' validate rows'''
 		for y in range(9):
 
 			summation = 0; multiplication = 1
@@ -125,7 +125,7 @@ class Sudoku(QObject):
 			if summation != 45 or multiplication != 362880:
 				return False
 
-		# validate little squares
+		''' validate little squares'''
 		for i in range(0):
 			
 			summation = 0; multiplication = 1

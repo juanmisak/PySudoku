@@ -17,7 +17,9 @@ class Estadistica(QtGui.QMainWindow):
         self.lienzo=QtGui.QGraphicsScene()
         self.ui.graphicsView.setScene(self.lienzo)
 
-        self.graficar( HighScore.loadFromFile() )
+        hs = HighScore.loadFromFile()
+        if len(hs) >= 5:
+            self.graficar(hs)
 
     def setHomeWindow(self, homeWindow):
         """Metodo que obtiene una referencia de la ventana home. 

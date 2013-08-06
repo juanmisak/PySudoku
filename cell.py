@@ -2,11 +2,11 @@ from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtGui import QWidget, QGridLayout, QPushButton, QLabel
 from keyboard import Keyboard
 """Clase que permite agragar celdas a mi layout*. 
-   :author: Ramón Carrillo & Esteban Muñoz
+   :author: Ramón Carrillo & Esteban Munoz
    :version: 1.0"""  
 class Cell(QWidget):
 
-	"""Señales requerias en la clase"""	
+	"""Senales requerias en la clase"""	
 	valueChanged = pyqtSignal(int)
 	clicked = pyqtSignal()
 
@@ -33,7 +33,7 @@ class Cell(QWidget):
 		self.setMode('Final')
 
 	def setValue(self, value):
-		"""Si es un modelo final,se añade un valor final. 
+		"""Si es un modelo final,se anade un valor final. 
     	   :param self: Referencia a la clase. 
            :param value: Valor a seterar""" 
 		# If it's in final mode, set the final value
@@ -52,7 +52,7 @@ class Cell(QWidget):
 		"""Muestra el boton con el valor final. 
     	   :param self: Referencia a la clase. 
            :param mode: modo que se seterar""" 
-		# Show button with final value
+		'''Show button with final value'''
 		if mode == 'Final':
 			for a in self.annotations:
 				a.hide()
@@ -68,12 +68,12 @@ class Cell(QWidget):
 		self.mode = mode
 
 	def setKeyboard(self, keyboard):
-		"""Añade el keyboard a la celda. 
+		"""Anade el keyboard a la celda. 
     	   :param self: Referencia a la clase. 
            :param keyboard: teclado """ 
 		self.keyboard = keyboard
 		self.clicked.connect(keyboard.activate)
 
 	def mouseReleaseEvent(self, e):
-		"""Evento que permite emitir una señal al keyboard"""
+		"""Evento que permite emitir una senal al keyboard"""
 		self.clicked.emit()

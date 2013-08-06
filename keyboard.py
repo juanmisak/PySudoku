@@ -6,7 +6,7 @@ from PyQt4.QtGui import QWidget, QGridLayout, QPushButton
    :version: 1.0""" 
 class Keyboard(QWidget):
 	
-	"""Señales requerias en la clase"""	
+	"""Senales requerias en la clase"""	
 	modeChanged = pyqtSignal(str)
 	numberSelected = pyqtSignal(int)
 
@@ -47,7 +47,7 @@ class Keyboard(QWidget):
 			('A', 3, 2, self.setModeToAnnotation)            
       
 		]
-		"""Permite añadir dos botones adicionales al keyboard que serviran 
+		"""Permite anadir dos botones adicionales al keyboard que serviran 
 			para las anotaciones y final de la misma."""
 		for b in modeButtons:
 			button = QPushButton(b[0]) 
@@ -62,7 +62,7 @@ class Keyboard(QWidget):
 		self.hide()
 
 	def selectNumber(self):
-		"""Obtine el numero que se presiono y emite una señal"""
+		"""Obtine el numero que se presiono y emite una senal"""
 		button = self.sender()
 		self.hide()
 		self.numberSelected.emit( int(button.text()) )

@@ -11,7 +11,7 @@ class Estadistica(QtGui.QMainWindow):
         QtGui.QMainWindow.__init__(self)
         self.ui=Ui_Estadistica()
         self.ui.setupUi(self)
-        """Coneccion de señales."""  
+        """Coneccion de senales."""  
         self.ui.pushButton_7.clicked.connect(self.onBtnInicioClicked)
         
         self.lienzo=QtGui.QGraphicsScene()

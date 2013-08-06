@@ -5,7 +5,7 @@ from mainwindow import MainWindow
 from estadistica import Estadistica
 """Clase que permite mostar un menu principal al jugador
     donde podra elegir el nivel de juego y ingresar su nombre. 
-   :author: Esteban Muñoz
+   :author: Esteban Munoz
    :version: 1.0"""  
 class Home(QMainWindow):
 
@@ -14,7 +14,7 @@ class Home(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_Home()
         self.ui.setupUi(self)  
-        """Coneccion de señales."""       
+        """Coneccion de senales."""       
         self.ui.btnJugar    .clicked.connect(self.onBtnJugarClicked)
         self.ui.btnDesarrolladores.clicked.connect(self.onBtnDesarrolladoresClicked)
         self.ui.btnEstadistica.clicked.connect(self.onBtnEstadisticaClicked)

@@ -8,7 +8,7 @@ from loadgames import Game, LoadGames
 from keyboard import Keyboard
 from sudoku import Sudoku
 """Clase que permite agragar celdas a mi layout*. 
-   :author: Esteban Muñoz & Ramón Carrillo 
+   :author: Esteban Munoz & Ramón Carrillo 
    :version: 1.0""" 
 class MainWindow(QMainWindow):
 
@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         """Inicializacion del tablero.""" 
         self.initBoard()
-        """Coneccion de señales.""" 
+        """Coneccion de senales.""" 
         self.ui.actionJUEGO_NUEVO.triggered.connect(self.onActionJuegoNuevoTriggered)
         self.ui.actionSALIR.triggered.connect(self.onActionSalirTriggered)
         self.ui.actionATRAS.triggered.connect(self.onActionAtrasTriggered)
@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         self.h = 0
         self.m = 0
         self.s = 0      
-        """Coneccion de señales."""  
+        """Coneccion de senales."""  
         self.timer.timeout.connect(self.timerTimeout)
 
     def stopTimer(self):

@@ -11,7 +11,9 @@ class LamecryptFile:
 			self.__f.write( chr(self.__mask) )
 		elif mode == 'r':
 			# Read the mask from the file
-			self.__mask = ord( self.__f.read(1) )
+			mask = self.__f.read(1)
+			if len( mask ) > 0:
+				self.__mask = ord(mask)
 
 
 	def read(self, size = -1):
